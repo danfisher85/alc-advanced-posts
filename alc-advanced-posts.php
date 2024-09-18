@@ -3,7 +3,7 @@
 Plugin Name: Alchemists Advanced Posts
 Plugin URI: https://themeforest.net/user/dan_fisher/portfolio
 Description: This plugin adds social sharing, post views, likes, custom post types to Alchemists WP Theme.
-Version: 2.1.4
+Version: 2.2.0
 Author: Dan Fisher
 Author URI: https://themeforest.net/user/dan_fisher
 Text Domain: alc-advanced-posts
@@ -37,7 +37,7 @@ if (!defined('ALCADVPOSTS_VERSION_KEY'))
 		define('ALCADVPOSTS_VERSION_KEY', 'alcsocial_version');
 
 if (!defined('ALCADVPOSTS_VERSION_NUM'))
-		define('ALCADVPOSTS_VERSION_NUM', '2.1.4');
+		define('ALCADVPOSTS_VERSION_NUM', '2.2.0');
 
 
 /*
@@ -189,7 +189,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_facebook': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://www.facebook.com/share.php?u=<?php echo $url; ?>&title=<?php echo esc_html( $title ); ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--fb" rel="nofollow"><i class="fa fa-facebook"></i></a>
+					<a target="_blank" onClick="popup = window.open('https://www.facebook.com/share.php?u=<?php echo $url; ?>&title=<?php echo esc_html( $title ); ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--fb" rel="nofollow"><i class="fab fa-facebook"></i></a>
 				</li>
 
 				<?php break;
@@ -197,15 +197,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_twitter': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--twitter" rel="nofollow"><i class="fa fa-twitter"></i></a>
-				</li>
-
-				<?php break;
-
-				case 'social_google-plus': ?>
-
-				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://google.com/bookmarks/mark?op=edit&amp;bkmk=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--gplus" rel="nofollow"><i class="fa fa-google-plus"></i></a>
+					<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--twitter" rel="nofollow"><i class="fab fa-x-twitter"></i></a>
 				</li>
 
 				<?php break;
@@ -213,7 +205,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_linkedin': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--linkedin" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+					<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--linkedin" rel="nofollow"><i class="fab fa-linkedin"></i></a>
 				</li>
 
 				<?php break;
@@ -221,7 +213,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_vk': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--vk" rel="nofollow"><i class="fa fa-vk"></i></a>
+					<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--vk" rel="nofollow"><i class="fab fa-vk"></i></a>
 				</li>
 
 				<?php break;
@@ -229,7 +221,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_ok': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--ok" rel="nofollow"><i class="fa fa-odnoklassniki"></i></a>
+					<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--ok" rel="nofollow"><i class="fab fa-odnoklassniki"></i></a>
 				</li>
 
 				<?php break;
@@ -237,7 +229,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_whatsapp': ?>
 				
 				<li class="social-links__item">
-					<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="social-links__link social-links__link--whatsapp" rel="nofollow"><i class="fa fa-whatsapp"></i></a>
+					<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="social-links__link social-links__link--whatsapp" rel="nofollow"><i class="fab fa-whatsapp"></i></a>
 				</li>
 
 				<?php break;
@@ -245,7 +237,7 @@ function alc_post_social_share_buttons_small() {
 				case 'social_viber': ?>
 				
 				<li class="social-links__item">
-					<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="social-links__link social-links__link--viber" rel="nofollow"><img src="<?php echo ALCADVPOSTS_PLUGIN_URL ?>/assets/img/icon-viber.svg" alt=""></a>
+					<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="social-links__link social-links__link--viber" rel="nofollow"><i class="fab fa-viber"></i></a>
 				</li>
 
 				<?php break;
@@ -295,49 +287,43 @@ function alc_post_social_share_buttons() {
 
 				case 'social_facebook': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/sharer.php?u=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-facebook btn-icon btn-block" rel="nofollow"><i class="fa fa-facebook"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Facebook', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/sharer.php?u=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-facebook btn-icon btn-block" rel="nofollow"><i class="fab fa-facebook"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Facebook', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_twitter': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-twitter btn-icon btn-block" rel="nofollow"><i class="fa fa-twitter"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Twitter', 'alc-advanced-posts' ); ?></span></a>
-
-				<?php break;
-
-				case 'social_google-plus': ?>
-
-				<a target="_blank" onClick="popup = window.open('https://google.com/bookmarks/mark?op=edit&amp;bkmk=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-gplus btn-icon btn-block" rel="nofollow"><i class="fa fa-google-plus"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Google+', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-twitter btn-icon btn-block" rel="nofollow"><i class="fab fa-x-twitter"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Twitter', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_linkedin': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-linkedin btn-icon btn-block" rel="nofollow"><i class="fa fa-linkedin"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Linkedin', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-linkedin btn-icon btn-block" rel="nofollow"><i class="fab fa-linkedin"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Linkedin', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_vk': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-vk btn-icon btn-block" rel="nofollow"><i class="fa fa-vk"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on VK', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-vk btn-icon btn-block" rel="nofollow"><i class="fab fa-vk"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on VK', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_ok': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-odnoklassniki btn-icon btn-block" rel="nofollow"><i class="fa fa-odnoklassniki"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on OK', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-odnoklassniki btn-icon btn-block" rel="nofollow"><i class="fab fa-odnoklassniki"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on OK', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_whatsapp': ?>
 				
-				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-whatsapp btn-icon btn-block" rel="nofollow"><i class="fa fa-whatsapp"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on WhatsApp', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-whatsapp btn-icon btn-block" rel="nofollow"><i class="fab fa-whatsapp"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on WhatsApp', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
 				case 'social_viber': ?>
 				
-				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-viber btn-icon btn-block" rel="nofollow"><img src="<?php echo ALCADVPOSTS_PLUGIN_URL ?>/assets/img/icon-viber.svg" alt=""> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Viber', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-viber btn-icon btn-block" rel="nofollow"><i class="fab fa-viber"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Viber', 'alc-advanced-posts' ); ?></span></a>
 
 				<?php break;
 
@@ -394,14 +380,6 @@ function alc_post_social_share_buttons_labels() {
 
 				<li class="social-links__item">
 					<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--twitter" rel="nofollow"><?php esc_html_e( 'Share on Twitter', 'alc-advanced-posts' ); ?></a>
-				</li>
-
-				<?php break;
-
-				case 'social_google-plus': ?>
-
-				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://google.com/bookmarks/mark?op=edit&amp;bkmk=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--gplus" rel="nofollow"><?php esc_html_e( 'Share on Google+', 'alc-advanced-posts' ); ?></a>
 				</li>
 
 				<?php break;
@@ -491,49 +469,43 @@ function alc_post_social_share_buttons_icons( $css_class = '' ) {
 
 				case 'social_facebook': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/share.php?u=<?php echo $url; ?>&title=<?php echo esc_html( $title ); ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-facebook btn-icon" rel="nofollow"><i class="fa fa-facebook"></i></a>
+				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/share.php?u=<?php echo $url; ?>&title=<?php echo esc_html( $title ); ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-facebook btn-icon" rel="nofollow"><i class="fab fa-facebook"></i></a>
 
 				<?php break;
 
 				case 'social_twitter': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-twitter btn-icon" rel="nofollow"><i class="fa fa-twitter"></i></a>
-
-				<?php break;
-
-				case 'social_google-plus': ?>
-
-				<a target="_blank" onClick="popup = window.open('https://google.com/bookmarks/mark?op=edit&amp;bkmk=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-gplus btn-icon" rel="nofollow"><i class="fa fa-google-plus"></i></a>
+				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-twitter btn-icon" rel="nofollow"><i class="fab fa-x-twitter"></i></a>
 
 				<?php break;
 
 				case 'social_linkedin': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-linkedin btn-icon" rel="nofollow"><i class="fa fa-linkedin"></i></a>
+				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-linkedin btn-icon" rel="nofollow"><i class="fab fa-linkedin"></i></a>
 
 				<?php break;
 
 				case 'social_vk': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-vk btn-icon" rel="nofollow"><i class="fa fa-vk"></i></a>
+				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-vk btn-icon" rel="nofollow"><i class="fab fa-vk"></i></a>
 
 				<?php break;
 
 				case 'social_ok': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-odnoklassniki btn-icon" rel="nofollow"><i class="fa fa-odnoklassniki"></i></a>
+				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-sm btn-odnoklassniki btn-icon" rel="nofollow"><i class="fab fa-odnoklassniki"></i></a>
 
 				<?php break;
 
 				case 'social_whatsapp': ?>
 				
-				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-sm btn-whatsapp btn-icon" rel="nofollow"><i class="fa fa-whatsapp"></i></a>
+				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-sm btn-whatsapp btn-icon" rel="nofollow"><i class="fab fa-whatsapp"></i></a>
 
 				<?php break;
 
 				case 'social_viber': ?>
 				
-				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-sm btn-viber btn-icon" rel="nofollow"><img src="<?php echo ALCADVPOSTS_PLUGIN_URL ?>/assets/img/icon-viber.svg" alt=""></a>
+				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-sm btn-viber btn-icon" rel="nofollow"><i class="fab fa-viber"></i></a>
 
 				<?php break;
 

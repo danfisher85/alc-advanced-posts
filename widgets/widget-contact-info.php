@@ -5,7 +5,7 @@
  * @author    Dan Fisher
  * @package   Alchemists Advanced Posts
  * @since     1.1.0
- * @version   2.1.4
+ * @version   2.2.0
  */
 
 
@@ -189,7 +189,7 @@ class Alchemists_Widget_Contact_Info extends WP_Widget {
 
 					<?php if ( !empty( $soc_tw) ): ?>
 					<li class="social-links__item">
-						<a href="<?php echo esc_attr( $soc_tw ); ?>" class="social-links__link" target="_blank"><i class="fab fa-twitter"></i> <?php esc_html_e( 'Twitter', 'alc-advanced-posts' ); ?></a>
+						<a href="<?php echo esc_attr( $soc_tw ); ?>" class="social-links__link" target="_blank"><i class="fab fa-x-twitter"></i> <?php esc_html_e( 'Twitter', 'alc-advanced-posts' ); ?></a>
 					</li>
 					<?php endif; ?>
 
