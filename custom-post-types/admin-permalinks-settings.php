@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @author    Dan Fisher
  * @package   Alchemists Advanced Posts
  * @version   2.0.0
- * @since     2.0.0
+ * @since     2.1.5
  */
 
 if ( ! class_exists( 'ALC_Admin_Permalink_Settings' ) ) :
@@ -22,12 +22,17 @@ if ( ! class_exists( 'ALC_Admin_Permalink_Settings' ) ) :
 	class ALC_Admin_Permalink_Settings {
 
 		/**
+		 * Slugs property
+		 */
+		private $slugs;
+
+		/**
 		 * Hook in tabs.
 		 */
 		public function __construct() {
 			$this->slugs = apply_filters( 'alchemists_permalink_slugs', array(
-        array( 'album', __( 'Albums', 'alc-advanced-posts' ) ),
-        array( 'video', __( 'Videos', 'alc-advanced-posts' ) ),
+				array( 'album', __( 'Albums', 'alc-advanced-posts' ) ),
+				array( 'video', __( 'Videos', 'alc-advanced-posts' ) ),
 			) );
 
 			add_action( 'admin_init', array( $this, 'settings_init' ) );
