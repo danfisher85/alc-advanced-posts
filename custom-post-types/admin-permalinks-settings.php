@@ -24,7 +24,7 @@ if ( ! class_exists( 'ALC_Admin_Permalink_Settings' ) ) :
 		/**
 		 * Slugs property
 		 */
-		private $slugs;
+		public $slugs;
 
 		/**
 		 * Hook in tabs.
