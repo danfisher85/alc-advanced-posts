@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @author    Dan Fisher
  * @package   Alchemists Advanced Posts
  * @version   2.0.0
- * @since     2.1.5
+ * @since     2.2.1
  */
 
 if ( ! class_exists( 'ALC_Admin_Permalink_Settings' ) ) :
@@ -100,4 +100,9 @@ if ( ! class_exists( 'ALC_Admin_Permalink_Settings' ) ) :
 
 endif;
 
-return new ALC_Admin_Permalink_Settings();
+// Instantiate on init to ensure translations are loaded
+add_action( 'init', function() {
+	if ( is_admin() ) {
+		new ALC_Admin_Permalink_Settings();
+	}
+} );
