@@ -99,7 +99,7 @@ endforeach;
 			$player_team_logo = alchemists_get_thumbnail_url( $sp_current_team, '0', 'sportspress-fit-medium' );
 			if( !empty($player_team_logo) ): ?>
 				<div class="widget-player__team-logo">
-					<img src="<?php echo esc_url( $player_team_logo ); ?>" alt="<?php esc_attr_e( 'Team Logo', 'alchemists' ); ?>" />
+					<img src="<?php echo esc_url( $player_team_logo ); ?>" alt="<?php esc_attr_e( 'Team Logo', 'alc-advanced-posts' ); ?>" />
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>
@@ -133,7 +133,7 @@ endforeach;
 									<?php endif; ?>
 									<div class="widget-player__stat-number"><?php echo esc_html( $stat_value ); ?></div>
 									<?php if ( ! in_array( $stat_key, array( 'g', 'gs' ) ) ) : ?>
-									<div class="widget-player__stat-legend"><?php esc_html_e( 'AVG', 'alchemists' ); ?></div>
+									<div class="widget-player__stat-legend"><?php esc_html_e( 'AVG', 'alc-advanced-posts' ); ?></div>
 									<?php endif; ?>
 								</div>
 							<?php }

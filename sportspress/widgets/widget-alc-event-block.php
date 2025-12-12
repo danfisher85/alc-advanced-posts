@@ -31,7 +31,7 @@ class Alchemists_Widget_Event_Block extends WP_Widget {
 
 		$widget_ops = array(
 			'classname' => 'widget-results',
-			'description' => esc_html__( 'A list of events.', 'alchemists' ),
+			'description' => esc_html__( 'A list of events.', 'alc-advanced-posts' ),
 		);
 		$control_ops = array(
 			'id_base' => 'widget-results'
@@ -120,17 +120,17 @@ class Alchemists_Widget_Event_Block extends WP_Widget {
 		$show_all_events_link = $instance['show_all_events_link'];
 		?>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title:', 'alc-advanced-posts' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('caption') ); ?>"><?php esc_html_e( 'Heading:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('caption') ); ?>"><?php esc_html_e( 'Heading:', 'alc-advanced-posts' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('caption') ); ?>" name="<?php echo esc_attr( $this->get_field_name('caption') ); ?>" type="text" value="<?php echo esc_attr($caption); ?>" /></p>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('id') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alchemists' ), esc_html__( 'Calendar', 'alchemists' ) ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('id') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alc-advanced-posts' ), esc_html__( 'Calendar', 'alc-advanced-posts' ) ); ?></label>
 		<?php
 		$args = array(
 			'post_type'       => 'sp_calendar',
-			'show_option_all' => esc_html__( 'All', 'alchemists' ),
+			'show_option_all' => esc_html__( 'All', 'alc-advanced-posts' ),
 			'name'            => $this->get_field_name('id'),
 			'id'              => $this->get_field_id('id'),
 			'selected'        => $id,
@@ -138,15 +138,15 @@ class Alchemists_Widget_Event_Block extends WP_Widget {
 			'class'           => 'sp-event-calendar-select widefat',
 		);
 		if ( ! sp_dropdown_pages( $args ) ):
-			sp_post_adder( 'sp_calendar', esc_html__( 'Add New', 'alchemists' ) );
+			sp_post_adder( 'sp_calendar', esc_html__( 'Add New', 'alc-advanced-posts' ) );
 		endif;
 		?>
 		</p>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('status') ); ?>"><?php esc_html_e( 'Status:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('status') ); ?>"><?php esc_html_e( 'Status:', 'alc-advanced-posts' ); ?></label>
 			<?php
 			$args = array(
-				'show_option_default' => esc_html__( 'Default', 'alchemists' ),
+				'show_option_default' => esc_html__( 'Default', 'alc-advanced-posts' ),
 				'name' => $this->get_field_name('status'),
 				'id' => $this->get_field_id('status'),
 				'selected' => $status,
@@ -157,10 +157,10 @@ class Alchemists_Widget_Event_Block extends WP_Widget {
 		</p>
 
 		<div class="sp-date-selector">
-			<p><label for="<?php echo esc_attr( $this->get_field_id('date') ); ?>"><?php esc_html_e( 'Date:', 'alchemists' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id('date') ); ?>"><?php esc_html_e( 'Date:', 'alc-advanced-posts' ); ?></label>
 				<?php
 				$args = array(
-					'show_option_default' => esc_html__( 'Default', 'alchemists' ),
+					'show_option_default' => esc_html__( 'Default', 'alc-advanced-posts' ),
 					'name' => $this->get_field_name('date'),
 					'id' => $this->get_field_id('date'),
 					'selected' => $date,
@@ -176,21 +176,21 @@ class Alchemists_Widget_Event_Block extends WP_Widget {
 			</p>
 		</div>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('day') ); ?>"><?php esc_html_e( 'Match Day:', 'alchemists' ); ?></label>
-		<input id="<?php echo esc_attr( $this->get_field_id('day') ); ?>" name="<?php echo esc_attr( $this->get_field_name('day') ); ?>" type="text" placeholder="<?php esc_attr_e( 'All', 'alchemists' ); ?>" value="<?php echo esc_attr( $day ); ?>" size="10"></p>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('day') ); ?>"><?php esc_html_e( 'Match Day:', 'alc-advanced-posts' ); ?></label>
+		<input id="<?php echo esc_attr( $this->get_field_id('day') ); ?>" name="<?php echo esc_attr( $this->get_field_name('day') ); ?>" type="text" placeholder="<?php esc_attr_e( 'All', 'alc-advanced-posts' ); ?>" value="<?php echo esc_attr( $day ); ?>" size="10"></p>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('number') ); ?>"><?php esc_html_e( 'Number of events to show:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('number') ); ?>"><?php esc_html_e( 'Number of events to show:', 'alc-advanced-posts' ); ?></label>
 		<input id="<?php echo esc_attr( $this->get_field_id('number') ); ?>" name="<?php echo esc_attr( $this->get_field_name('number') ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3"></p>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('order') ); ?>"><?php esc_html_e( 'Sort Order:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('order') ); ?>"><?php esc_html_e( 'Sort Order:', 'alc-advanced-posts' ); ?></label>
 		<select name="<?php echo esc_attr( $this->get_field_name('order') ); ?>" id="<?php echo esc_attr( $this->get_field_id('order') ); ?>" class="sp-select-order widefat">
-			<option value="default" <?php selected( 'default', $order ); ?>><?php esc_html_e( 'Default', 'alchemists' ); ?></option>
-			<option value="ASC" <?php selected( 'ASC', $order ); ?>><?php esc_html_e( 'Ascending', 'alchemists' ); ?></option>
-			<option value="DESC" <?php selected( 'DESC', $order ); ?>><?php esc_html_e( 'Descending', 'alchemists' ); ?></option>
+			<option value="default" <?php selected( 'default', $order ); ?>><?php esc_html_e( 'Default', 'alc-advanced-posts' ); ?></option>
+			<option value="ASC" <?php selected( 'ASC', $order ); ?>><?php esc_html_e( 'Ascending', 'alc-advanced-posts' ); ?></option>
+			<option value="DESC" <?php selected( 'DESC', $order ); ?>><?php esc_html_e( 'Descending', 'alc-advanced-posts' ); ?></option>
 		</select></p>
 
 		<p class="sp-event-calendar-show-all-toggle<?php if ( ! $id ): ?> hidden<?php endif; ?>"><input class="checkbox" type="checkbox" id="<?php echo esc_attr( $this->get_field_id('show_all_events_link') ); ?>" name="<?php echo esc_attr( $this->get_field_name('show_all_events_link') ); ?>" value="1" <?php checked( $show_all_events_link, 1 ); ?>>
-		<label for="<?php echo esc_attr( $this->get_field_id('show_all_events_link') ); ?>"><?php esc_html_e( 'Display link to view all events', 'alchemists' ); ?></label></p>
+		<label for="<?php echo esc_attr( $this->get_field_id('show_all_events_link') ); ?>"><?php esc_html_e( 'Display link to view all events', 'alc-advanced-posts' ); ?></label></p>
 
 		<?php
 

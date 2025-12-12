@@ -93,7 +93,7 @@ if ( $stat_type == 'stat_extended' ) {
 		<?php endif; ?>
 
 		<div class="widget-player__ribbon">
-			<i class="fa fa-star"></i> <?php esc_html_e( 'Featured Player', 'alchemists' ); ?>
+			<i class="fa fa-star"></i> <?php esc_html_e( 'Featured Player', 'alc-advanced-posts' ); ?>
 		</div>
 
 		<figure class="widget-player__photo">

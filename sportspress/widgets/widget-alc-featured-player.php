@@ -31,7 +31,7 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 
 		$widget_ops = array(
 			'classname' => 'widget-player-featured',
-			'description' => esc_html__( 'A featured player.', 'alchemists' ),
+			'description' => esc_html__( 'A featured player.', 'alc-advanced-posts' ),
 		);
 		$control_ops = array(
 			'id_base' => 'widget-player-featured'
@@ -130,27 +130,27 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 		$add_link             = $instance['add_link'];
 		?>
 
-		<p><label for="<?php echo esc_attr( $this->get_field_id('caption') ); ?>"><?php esc_html_e( 'Title:', 'alchemists' ); ?></label>
+		<p><label for="<?php echo esc_attr( $this->get_field_id('caption') ); ?>"><?php esc_html_e( 'Title:', 'alc-advanced-posts' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('caption') ); ?>" name="<?php echo esc_attr( $this->get_field_name('caption') ); ?>" type="text" value="<?php echo esc_attr( $caption ); ?>" /></p>
 
-		<p class="sp-dropdown-filter"><label for="<?php echo esc_attr( $this->get_field_id('team') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alchemists' ), esc_html__( 'Team', 'alchemists' ) ); ?></label>
+		<p class="sp-dropdown-filter"><label for="<?php echo esc_attr( $this->get_field_id('team') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alc-advanced-posts' ), esc_html__( 'Team', 'alc-advanced-posts' ) ); ?></label>
 		<?php
 		$args = array(
 			'post_type'       => 'sp_team',
 			'name'            => $this->get_field_name('team'),
 			'id'              => $this->get_field_id('team'),
 			'selected'        => $team,
-			'show_option_all' => esc_html__( 'All', 'alchemists' ),
+			'show_option_all' => esc_html__( 'All', 'alc-advanced-posts' ),
 			'values'          => 'ID',
 			'class'           => 'widefat',
 		);
 		if ( ! sp_dropdown_pages( $args ) ):
-			sp_post_adder( 'sp_team', esc_html__( 'Add New', 'alchemists' ) );
+			sp_post_adder( 'sp_team', esc_html__( 'Add New', 'alc-advanced-posts' ) );
 		endif;
 		?>
 		</p>
 
-		<p class="sp-dropdown-target"><label for="<?php echo esc_attr( $this->get_field_id('id') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alchemists' ), esc_html__( 'Player', 'alchemists' ) ); ?></label>
+		<p class="sp-dropdown-target"><label for="<?php echo esc_attr( $this->get_field_id('id') ); ?>"><?php printf( esc_html__( 'Select %s:', 'alc-advanced-posts' ), esc_html__( 'Player', 'alc-advanced-posts' ) ); ?></label>
 		<?php
 		$args = array(
 			'post_type' => 'sp_player',
@@ -162,29 +162,29 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 			'filter'    => 'sp_team',
 		);
 		if ( ! sp_dropdown_pages( $args ) ):
-			sp_post_adder( 'sp_player', esc_html__( 'Add New', 'alchemists' ) );
+			sp_post_adder( 'sp_player', esc_html__( 'Add New', 'alc-advanced-posts' ) );
 		endif;
 		?>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'style_type' ) ); ?>"><?php esc_html_e( 'Select Style:', 'alchemists' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'style_type' ) ); ?>"><?php esc_html_e( 'Select Style:', 'alc-advanced-posts' ); ?></label>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'style_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'style_type' ) ); ?>" class="widefat">
-				<option value="style_type1" <?php echo ( 'style_type1' == $instance['style_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Style 1', 'alchemists' ); ?></option>
-				<option value="style_type2" <?php echo ( 'style_type2' == $instance['style_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Style 2', 'alchemists' ); ?></option>
+				<option value="style_type1" <?php echo ( 'style_type1' == $instance['style_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Style 1', 'alc-advanced-posts' ); ?></option>
+				<option value="style_type2" <?php echo ( 'style_type2' == $instance['style_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Style 2', 'alc-advanced-posts' ); ?></option>
 			</select>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'stat_type' ) ); ?>"><?php esc_html_e( 'Statistics Type:', 'alchemists' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'stat_type' ) ); ?>"><?php esc_html_e( 'Statistics Type:', 'alc-advanced-posts' ); ?></label>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'stat_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'stat_type' ) ); ?>" class="widefat">
-				<option value="stat_compact" <?php echo ( 'stat_compact' == $instance['stat_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Compact', 'alchemists' ); ?></option>
-				<option value="stat_extended" <?php echo ( 'stat_extended' == $instance['stat_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Extended', 'alchemists' ); ?></option>
+				<option value="stat_compact" <?php echo ( 'stat_compact' == $instance['stat_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Compact', 'alc-advanced-posts' ); ?></option>
+				<option value="stat_extended" <?php echo ( 'stat_extended' == $instance['stat_type'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Extended', 'alc-advanced-posts' ); ?></option>
 			</select>
 		</p>
 
 		<p class="sp-prefs">
-			<?php esc_html_e( 'Statistics:', 'alchemists' ); ?><br>
+			<?php esc_html_e( 'Statistics:', 'alc-advanced-posts' ); ?><br>
 			<?php
 
 			$args = array(
@@ -204,11 +204,11 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 			<?php endforeach; ?>
 		</p>
 		<p>
-			<em><?php esc_html_e( 'Note: Select no more than three items.', 'alchemists' ); ?></em>
+			<em><?php esc_html_e( 'Note: Select no more than three items.', 'alc-advanced-posts' ); ?></em>
 		</p>
 
 		<p class="sp-prefs">
-			<?php esc_html_e( 'Progress Bars:', 'alchemists' ); ?><br>
+			<?php esc_html_e( 'Progress Bars:', 'alc-advanced-posts' ); ?><br>
 			<?php
 
 			$args = array(
@@ -230,11 +230,11 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 			<?php endforeach; ?>
 		</p>
 		<p>
-			<em><?php esc_html_e( 'Note: Select only percent based stat, and no more than 2 or 3 items.', 'alchemists' ); ?></em>
+			<em><?php esc_html_e( 'Note: Select only percent based stat, and no more than 2 or 3 items.', 'alc-advanced-posts' ); ?></em>
 		</p>
 
 		<p class="sp-prefs">
-			<?php esc_html_e( 'Performance:', 'alchemists' ); ?><br>
+			<?php esc_html_e( 'Performance:', 'alc-advanced-posts' ); ?><br>
 			<?php
 
 			$args = array(
@@ -256,7 +256,7 @@ class Alchemists_Widget_Featured_Player extends WP_Widget {
 
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( $instance['add_link'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'add_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'add_link' ) ); ?>" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'add_link' ) ); ?>"><?php esc_attr_e( 'Add Link to Player Page?', 'alchemists' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'add_link' ) ); ?>"><?php esc_attr_e( 'Add Link to Player Page?', 'alc-advanced-posts' ); ?></label>
 		</p>
 
 		<?php

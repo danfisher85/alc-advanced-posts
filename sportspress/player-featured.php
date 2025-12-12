@@ -69,13 +69,13 @@ $labels = $data[0];
 // Remove the first row to leave us with the actual data
 unset( $data[0] );
 
-$performance_desc = esc_html__( 'In career', 'alchemists' );
+$performance_desc = esc_html__( 'In career', 'alc-advanced-posts' );
 
 // Display stats for Current Season
 if ( ! empty( $current_season ) && ! $show_total ) {
 	if ( isset( $data[ $current_season ] ) ) {
 		$data = $data[ $current_season ];
-		$performance_desc = esc_html__( 'In current season', 'alchemists' );
+		$performance_desc = esc_html__( 'In current season', 'alc-advanced-posts' );
 	} else {
 		return;
 	}

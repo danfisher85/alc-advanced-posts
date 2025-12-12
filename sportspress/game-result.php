@@ -122,7 +122,7 @@ if ( 'vertical' == $layout_style ) {
 			if ( $expand_btn ) {
 				$inputId = uniqid( 'expand-stats-' );
 				$header_output .= '<div class="switch">';
-					$header_output .= '<span class="switch__label-txt" data-text-expand="' . esc_attr__( 'Expand Stats', 'alchemists' ) . '" data-text-shrink="' . esc_attr__( 'Shrink Stats', 'alchemists' ) . '">' . esc_html__( 'Expand Stats', 'alchemists' ) . '</span>';
+					$header_output .= '<span class="switch__label-txt" data-text-expand="' . esc_attr__( 'Expand Stats', 'alc-advanced-posts' ) . '" data-text-shrink="' . esc_attr__( 'Shrink Stats', 'alc-advanced-posts' ) . '">' . esc_html__( 'Expand Stats', 'alc-advanced-posts' ) . '</span>';
 					$header_output .= '<input id="' . $inputId . '" class="alc-switch-toggle" type="checkbox">';
 					$header_output .= '<label for="' . $inputId . '"></label>';
 				$header_output .= '</div>';
@@ -313,10 +313,10 @@ if ( 'vertical' == $layout_style ) {
 										// Game Video
 										$video_url = get_post_meta( $event->ID, 'sp_video', true );
 										if ( $video_url ) {
-											echo '<span href="' . esc_url( $video_url ) . '" class="game-result__score-video-icon mp_iframe" data-toggle="tooltip" data-placement="bottom" title="' . esc_attr( 'Watch Replay', 'alchemists' ) . '"><i class="fa fa-play"></i></span>';
+											echo '<span href="' . esc_url( $video_url ) . '" class="game-result__score-video-icon mp_iframe" data-toggle="tooltip" data-placement="bottom" title="' . esc_attr( 'Watch Replay', 'alc-advanced-posts' ) . '"><i class="fa fa-play"></i></span>';
 										}
 									} else {
-										echo '<div class="widget-game-result__score-label">' . esc_html__( 'Final Score', 'alchemists' ) . '</div>';
+										echo '<div class="widget-game-result__score-label">' . esc_html__( 'Final Score', 'alc-advanced-posts' ) . '</div>';
 									}
 								else:
 									if ( $show_venue ) {
@@ -456,7 +456,7 @@ if ( 'vertical' == $layout_style ) {
 			<!-- Game Statistics -->
 			<div class="widget-game-result__section">
 				<header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
-					<h5 class="widget-game-result__subtitle"><?php esc_html_e( 'Game Statistics', 'alchemists' ); ?></h5>
+					<h5 class="widget-game-result__subtitle"><?php esc_html_e( 'Game Statistics', 'alc-advanced-posts' ); ?></h5>
 				</header>
 				<div class="widget-game-result__section-inner">
 
@@ -637,7 +637,7 @@ if ( 'vertical' == $layout_style ) {
 			<!-- Game Statistics -->
 			<div class="widget-game-result__section">
 				<header class="widget-game-result__subheader card__subheader card__subheader--sm card__subheader--nomargins">
-					<h5 class="widget-game-result__subtitle"><?php esc_html_e( 'Game Statistics', 'alchemists' ); ?></h5>
+					<h5 class="widget-game-result__subtitle"><?php esc_html_e( 'Game Statistics', 'alc-advanced-posts' ); ?></h5>
 				</header>
 				<div class="widget-game-result__section-inner">
 
