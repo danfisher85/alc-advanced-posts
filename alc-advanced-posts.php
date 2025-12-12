@@ -3,7 +3,7 @@
 Plugin Name: Alchemists Advanced Posts
 Plugin URI: https://themeforest.net/user/dan_fisher/portfolio
 Description: This plugin adds social sharing, post views, likes, custom post types to Alchemists WP Theme.
-Version: 2.2.1
+Version: 2.3.0
 Author: Dan Fisher
 Author URI: https://themeforest.net/user/dan_fisher
 Text Domain: alc-advanced-posts
@@ -37,7 +37,7 @@ if (!defined('ALCADVPOSTS_VERSION_KEY'))
 		define('ALCADVPOSTS_VERSION_KEY', 'alcsocial_version');
 
 if (!defined('ALCADVPOSTS_VERSION_NUM'))
-		define('ALCADVPOSTS_VERSION_NUM', '2.2.1');
+		define('ALCADVPOSTS_VERSION_NUM', '2.3.0');
 
 
 /*
@@ -62,6 +62,13 @@ include ALCADVPOSTS_PLUGIN_DIR . '/custom-post-types/custom-post-types.php';
 // Widgets
 include ALCADVPOSTS_PLUGIN_DIR . '/widgets/widgets.php';
 
+// SportsPress: Load widgets after plugins are loaded
+function alc_load_sportspress_widgets() {
+	if ( class_exists( 'SportsPress' ) ) {
+		include ALCADVPOSTS_PLUGIN_DIR . '/sportspress/widgets.php';
+	}
+}
+add_action( 'plugins_loaded', 'alc_load_sportspress_widgets' );
 
 
 /*
