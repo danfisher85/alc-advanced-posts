@@ -1,5 +1,51 @@
 (function( $ ) {
 	'use strict';
+
+	// On page load, fetch a fresh nonce + current like state for every button on the
+	// page. This makes the like system work correctly when a caching plugin serves
+	// stale HTML (the admin-ajax.php endpoint is never cached).
+	$(document).ready(function() {
+		var buttons = $('.sl-button');
+		if ( ! buttons.length ) { return; }
+
+		var items = [];
+		buttons.each(function() {
+			items.push({
+				post_id:    $(this).data('post-id'),
+				is_comment: $(this).data('iscomment')
+			});
+		});
+
+		$.ajax({
+			type: 'POST',
+			url:  simpleLikes.ajaxurl,
+			data: { action: 'get_simple_like_statuses', items: items },
+			success: function( response ) {
+				$.each( response, function( i, data ) {
+					var selector = data.is_comment == 1
+						? '.sl-comment-button-' + data.post_id
+						: '.sl-button-'         + data.post_id;
+					var btn  = $( selector );
+					var wrap = btn.closest('.meta__item--likes');
+					// Refresh nonce so the click handler sends a valid nonce.
+					btn.attr( 'data-nonce', data.nonce );
+					// Also update the no-JS fallback href nonce param.
+					var href = btn.attr('href') || '';
+					btn.attr( 'href', href.replace( /nonce=[^&]*/, 'nonce=' + data.nonce ) );
+					btn.html( data.icon + data.count );
+					btn.prop( 'title', data.status === 'liked' ? simpleLikes.unlike : simpleLikes.like );
+					if ( data.status === 'liked' ) {
+						btn.addClass('liked');
+						wrap.addClass('meta__item--likes--active');
+					} else {
+						btn.removeClass('liked');
+						wrap.removeClass('meta__item--likes--active');
+					}
+				});
+			}
+		});
+	});
+
 	$(document).on('click', '.sl-button', function() {
 		var button = $(this);
 		var post_id = button.attr('data-post-id');

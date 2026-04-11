@@ -165,6 +165,40 @@ function process_simple_like() {
 }
 
 /**
+ * Returns fresh nonce + current like state for a batch of buttons.
+ * Called on page load by JS to bypass stale cached HTML.
+ * @since    0.5.3
+ */
+add_action( 'wp_ajax_nopriv_get_simple_like_statuses', 'get_simple_like_statuses' );
+add_action( 'wp_ajax_get_simple_like_statuses', 'get_simple_like_statuses' );
+function get_simple_like_statuses() {
+	$items    = ( isset( $_REQUEST['items'] ) && is_array( $_REQUEST['items'] ) ) ? $_REQUEST['items'] : array();
+	$nonce    = wp_create_nonce( 'simple-likes-nonce' );
+	$response = array();
+	foreach ( $items as $item ) {
+		$post_id    = ( isset( $item['post_id'] ) && is_numeric( $item['post_id'] ) ) ? intval( $item['post_id'] ) : 0;
+		$is_comment = ( isset( $item['is_comment'] ) && $item['is_comment'] == 1 ) ? 1 : 0;
+		if ( ! $post_id ) {
+			continue;
+		}
+		$liked      = already_liked( $post_id, $is_comment );
+		$like_count = $is_comment
+			? get_comment_meta( $post_id, '_comment_like_count', true )
+			: get_post_meta( $post_id, '_post_like_count', true );
+		$like_count = ( isset( $like_count ) && is_numeric( $like_count ) ) ? $like_count : 0;
+		$response[] = array(
+			'post_id'    => $post_id,
+			'is_comment' => $is_comment,
+			'nonce'      => $nonce,
+			'count'      => get_like_count( $like_count ),
+			'icon'       => $liked ? get_liked_icon() : get_unliked_icon(),
+			'status'     => $liked ? 'liked' : 'unliked',
+		);
+	}
+	wp_send_json( $response );
+}
+
+/**
  * Utility to test if the post is already liked
  * @since    0.5
  */
