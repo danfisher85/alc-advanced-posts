@@ -3,7 +3,7 @@
 Plugin Name: Alchemists Extensions
 Plugin URI: https://themeforest.net/user/dan_fisher/portfolio
 Description: This plugin adds social sharing, post views, likes, custom post types to Alchemists WP Theme.
-Version: 2.5.0
+Version: 2.6.0
 Author: Dan Fisher
 Author URI: https://themeforest.net/user/dan_fisher
 Text Domain: alc-advanced-posts
@@ -37,7 +37,7 @@ if (!defined('ALCADVPOSTS_VERSION_KEY'))
 		define('ALCADVPOSTS_VERSION_KEY', 'alcsocial_version');
 
 if (!defined('ALCADVPOSTS_VERSION_NUM'))
-		define('ALCADVPOSTS_VERSION_NUM', '2.5.0');
+		define('ALCADVPOSTS_VERSION_NUM', '2.6.0');
 
 
 /*
@@ -586,97 +586,3 @@ function alchemists_add_opengraph_meta() {
 	}
 }
 add_action( 'wp_head', 'alchemists_add_opengraph_meta', 5 );
-
-
-/**
- * Update and Activation (moved from theme)
- */
-
-/**
- * Theme Info Helper (moved from theme)
- */
-if ( ! function_exists( 'df_get_theme_info' ) ) {
-	function df_get_theme_info() {
-		$theme      = wp_get_theme();
-		$theme_name = $theme->get('Name');
-		$theme_v    = $theme->get('Version');
-
-		$theme_info = array(
-'name' => $theme_name,
-			'slug' => sanitize_file_name( strtolower( $theme_name ) ),
-			'v'    => $theme_v,
-		);
-
-		return $theme_info;
-	}
-}
-
-/**
- * Activation helper (moved from theme)
- */
-if ( ! function_exists( 'df_is_theme_activated' ) ) {
-	function df_is_theme_activated() {
-		return apply_filters( 'alchemists_is_theme_activated', false );
-	}
-}
-
-/**
- * Update and Activation (moved from theme)
- * Using delayed initialization to ensure WordPress is fully loaded
- */
-require plugin_dir_path( __FILE__ ) . 'admin/update/update-init.php';
-
-/**
- * Admin styling for non-activated themes (moved from theme)
- */
-if ( ! function_exists('alc_custom_admin_no_registered') ) {
-	function alc_custom_admin_no_registered(){
-		if ( ! df_is_theme_activated() ) {
-
-			wp_enqueue_style(
-'alchemists-custom-admin-not-registered',
-plugin_dir_url( __FILE__ ) . 'admin/assets/css/df-admin-not-registered.css',
-array(),
-				ALCADVPOSTS_VERSION_NUM
-			);
-
-			wp_enqueue_script(
-'alchemists-custom-js-admin',
-plugin_dir_url( __FILE__ ) . 'admin/js/min/alc-admin-min.js',
-array(),
-				ALCADVPOSTS_VERSION_NUM
-			);
-		}
-	}
-}
-add_action( 'admin_enqueue_scripts', 'alc_custom_admin_no_registered' );
-
-/**
- * Adds custom classes to body for activation status (moved from theme)
- */
-if ( ! function_exists( 'alc_body_classes' ) ) {
-	function alc_body_classes( $classes ) {
-		if ( df_is_theme_activated() ) {
-			$classes[] = 'alc-is-activated';
-		} else {
-			$classes[] = 'alc-is-not-activated';
-		}
-		return $classes;
-	}
-}
-add_filter( 'body_class', 'alc_body_classes' );
-
-/**
- * Adds custom classes to admin body for activation status (moved from theme)
- */
-if ( ! function_exists( 'alc_admin_body_classes' ) ) {
-	function alc_admin_body_classes( $classes ) {
-		if ( df_is_theme_activated() ) {
-			$classes .= ' alc-is-activated';
-		} else {
-			$classes .= ' alc-is-not-activated';
-		}
-		return $classes;
-	}
-}
-add_filter( 'admin_body_class', 'alc_admin_body_classes' );
