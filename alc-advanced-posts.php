@@ -3,7 +3,7 @@
 Plugin Name: Alchemists Extensions
 Plugin URI: https://themeforest.net/user/dan_fisher/portfolio
 Description: This plugin adds social sharing, post views, likes, custom post types to Alchemists WP Theme.
-Version: 2.6.0
+Version: 2.7.1
 Author: Dan Fisher
 Author URI: https://themeforest.net/user/dan_fisher
 Text Domain: alc-advanced-posts
@@ -37,7 +37,7 @@ if (!defined('ALCADVPOSTS_VERSION_KEY'))
 		define('ALCADVPOSTS_VERSION_KEY', 'alcsocial_version');
 
 if (!defined('ALCADVPOSTS_VERSION_NUM'))
-		define('ALCADVPOSTS_VERSION_NUM', '2.6.0');
+		define('ALCADVPOSTS_VERSION_NUM', '2.7.1');
 
 
 /*
@@ -292,49 +292,49 @@ function alc_post_social_share_buttons() {
 
 				case 'social_facebook': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/sharer.php?u=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-facebook btn-icon btn-block" rel="nofollow"><i class="fab fa-facebook"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Facebook', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://www.facebook.com/sharer.php?u=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-facebook btn-icon btn-block" rel="nofollow"><i class="fab fa-facebook"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'Facebook' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_twitter': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-twitter btn-icon btn-block" rel="nofollow"><i class="fab fa-x-twitter"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Twitter', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-twitter btn-icon btn-block" rel="nofollow"><i class="fab fa-x-twitter"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'X / Twitter' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_linkedin': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-linkedin btn-icon btn-block" rel="nofollow"><i class="fab fa-linkedin"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Linkedin', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $title; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-linkedin btn-icon btn-block" rel="nofollow"><i class="fab fa-linkedin"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'Linkedin' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_vk': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-vk btn-icon btn-block" rel="nofollow"><i class="fab fa-vk"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on VK', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://vk.com/share.php?url=<?php echo $url; ?>&amp;<?php echo $title; ?><?php echo $thumbnail; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-vk btn-icon btn-block" rel="nofollow"><i class="fab fa-vk"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'VK' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_ok': ?>
 
-				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-odnoklassniki btn-icon btn-block" rel="nofollow"><i class="fab fa-odnoklassniki"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on OK', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" onClick="popup = window.open('https://connect.ok.ru/offer?url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="btn btn-default btn-odnoklassniki btn-icon btn-block" rel="nofollow"><i class="fab fa-odnoklassniki"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'OK' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_whatsapp': ?>
 				
-				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-whatsapp btn-icon btn-block" rel="nofollow"><i class="fab fa-whatsapp"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on WhatsApp', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $url; ?>" class="btn btn-default btn-whatsapp btn-icon btn-block" rel="nofollow"><i class="fab fa-whatsapp"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'WhatsApp' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_viber': ?>
 				
-				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-viber btn-icon btn-block" rel="nofollow"><i class="fab fa-viber"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Viber', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" href="viber://forward?text=<?php echo $url; ?>" class="btn btn-default btn-viber btn-icon btn-block" rel="nofollow"><i class="fab fa-viber"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'Viber' ); ?></small></span></a>
 
 				<?php break;
 
 				case 'social_telegram': ?>
 
-				<a target="_blank" href="https://telegram.me/share/url?url=<?php echo $url; ?>&text=<?php echo $title; ?>" class="btn btn-default btn-telegram btn-icon btn-block" rel="nofollow"><i class="fab fa-telegram-plane"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share on Telegram', 'alc-advanced-posts' ); ?></span></a>
+				<a target="_blank" href="https://telegram.me/share/url?url=<?php echo $url; ?>&text=<?php echo $title; ?>" class="btn btn-default btn-telegram btn-icon btn-block" rel="nofollow"><i class="fab fa-telegram-plane"></i> <span class="post-sharing__label hidden-xs"><?php esc_html_e( 'Share', 'alc-advanced-posts' ); ?> <small><?php printf( esc_html__( 'on %s', 'alc-advanced-posts' ), 'Telegram' ); ?></small></span></a>
 
 				<?php break;
 
@@ -384,7 +384,7 @@ function alc_post_social_share_buttons_labels() {
 				case 'social_twitter': ?>
 
 				<li class="social-links__item">
-					<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--twitter" rel="nofollow"><?php esc_html_e( 'Share on Twitter', 'alc-advanced-posts' ); ?></a>
+					<a target="_blank" onClick="popup = window.open('https://twitter.com/intent/tweet?text=<?php echo $title; ?>&amp;url=<?php echo $url; ?>', 'PopupPage', 'height=450,width=500,scrollbars=yes,resizable=yes'); return false" href="#" class="social-links__link social-links__link--twitter" rel="nofollow"><?php esc_html_e( 'Share on X / Twitter', 'alc-advanced-posts' ); ?></a>
 				</li>
 
 				<?php break;
@@ -526,6 +526,97 @@ function alc_post_social_share_buttons_icons( $css_class = '' ) {
 
 	</div>
 	<?php endif;
+}
+
+
+/**
+ * Share networks enabled in Theme Options > Blog, in the chosen order:
+ * sorter key => array( slug, icon class, share URL ) for the current post.
+ */
+function alc_post_social_share_networks() {
+
+	global $post;
+
+	$alchemists_data = get_option( 'alchemists_data' );
+	$post_social     = isset( $alchemists_data['alchemists__opt-single-post-social'] ) ? esc_html( $alchemists_data['alchemists__opt-single-post-social'] ) : '';
+	$social_share    = isset( $alchemists_data['alchemists__opt-single-post-social-sorter']['enabled'] ) ? $alchemists_data['alchemists__opt-single-post-social-sorter']['enabled'] : array();
+
+	if ( $post_social != 1 || empty( $social_share ) || ! $post ) {
+		return array();
+	}
+
+	$url   = urlencode( get_permalink( $post->ID ) );
+	$title = urlencode( get_the_title( $post->ID ) );
+
+	$networks = array(
+		'social_facebook' => array( 'facebook',      'fab fa-facebook',       'https://www.facebook.com/share.php?u=' . $url . '&title=' . $title ),
+		'social_twitter'  => array( 'twitter',       'fab fa-x-twitter',      'https://twitter.com/intent/tweet?text=' . $title . '&url=' . $url ),
+		'social_linkedin' => array( 'linkedin',      'fab fa-linkedin',       'https://linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title ),
+		'social_vk'       => array( 'vk',            'fab fa-vk',             'https://vk.com/share.php?url=' . $url ),
+		'social_ok'       => array( 'odnoklassniki', 'fab fa-odnoklassniki',  'https://connect.ok.ru/offer?url=' . $url ),
+		'social_whatsapp' => array( 'whatsapp',      'fab fa-whatsapp',       'https://api.whatsapp.com/send?text=' . $url ),
+		'social_viber'    => array( 'viber',         'fab fa-viber',          'viber://forward?text=' . $url ),
+		'social_telegram' => array( 'telegram',      'fab fa-telegram-plane', 'https://telegram.me/share/url?url=' . $url . '&text=' . $title ),
+	);
+
+	$enabled = array();
+	foreach ( $social_share as $key => $value ) {
+		if ( isset( $networks[ $key ] ) ) {
+			$enabled[ $key ] = $networks[ $key ];
+		}
+	}
+
+	return $enabled;
+}
+
+
+/**
+ * Share cells for the skewed post footer (Blog Style 10): meta items with the
+ * network icon and a "Share" label, appended to the views / likes / comments.
+ */
+function alc_post_social_share_meta_items() {
+
+	$protocols = array_merge( wp_allowed_protocols(), array( 'viber' ) );
+
+	foreach ( alc_post_social_share_networks() as $network ) {
+		list( $slug, $icon, $share_url ) = $network;
+		printf(
+			'<div class="meta__item meta__item--social meta__item--social-%1$s"><a href="%2$s" target="_blank" rel="nofollow noopener"><span class="meta__item-holder"><i class="%3$s"></i><span class="meta__item--social-label">%4$s</span></span></a></div>',
+			esc_attr( $slug ),
+			esc_url( $share_url, $protocols ),
+			esc_attr( $icon ),
+			esc_html__( 'Share', 'alc-advanced-posts' )
+		);
+	}
+}
+
+
+/**
+ * Post Social Share Buttons - plus style: social-links--btn-plus list with a "Share" label
+ * (used by the Video post Layout 2). Networks and order come from Theme Options > Blog.
+ */
+function alc_post_social_share_buttons_plus( $css_class = '' ) {
+
+	$networks = alc_post_social_share_networks();
+
+	if ( empty( $networks ) ) {
+		return;
+	}
+
+	$protocols = array_merge( wp_allowed_protocols(), array( 'viber' ) );
+
+	echo '<ul class="social-links social-links--btn social-links--btn-plus post-sharing-plus ' . esc_attr( $css_class ) . '">';
+	foreach ( $networks as $network ) {
+		list( $slug, $icon, $share_url ) = $network;
+		printf(
+			'<li class="social-links__item"><a href="%1$s" class="social-links__link social-links__link--%2$s" target="_blank" rel="nofollow noopener"><i class="%3$s"></i><span class="social-links__label">%4$s</span><span class="social-links__icon"><i class="fas fa-plus"></i></span></a></li>',
+			esc_url( $share_url, $protocols ),
+			esc_attr( $slug ),
+			esc_attr( $icon ),
+			esc_html__( 'Share', 'alc-advanced-posts' )
+		);
+	}
+	echo '</ul>';
 }
 
 

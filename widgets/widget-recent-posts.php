@@ -5,7 +5,7 @@
  * @author    Dan Fisher
  * @package   Alchemists Advanced Posts
  * @since     1.1.0
- * @version   2.1.0
+ * @version   2.7.0
  */
 
 
@@ -118,7 +118,10 @@ class Alchemists_Widget_Recent_Posts extends WP_Widget {
 		);
 		$post_thumb_size = 'alchemists_thumbnail-xs';
 
-		if ( $layout_style != 'xlarge' ) {
+		if ( $layout_style == 'list-skewed' ) {
+			$posts_list_classes[] = 'posts--list-skewed';
+			$post_thumb_size = 'alchemists_thumbnail-xs-tall';
+		} elseif ( $layout_style != 'xlarge' ) {
 			$posts_list_classes[] = 'posts--simple-list';
 		} else {
 			$posts_list_classes[] = 'posts--tile';
@@ -317,6 +320,7 @@ class Alchemists_Widget_Recent_Posts extends WP_Widget {
 				<option value="xsmall" <?php echo ( 'xsmall' == $instance['layout_style'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Extra Small - 50x50', 'alc-advanced-posts' ); ?></option>
 				<option value="large" <?php echo ( 'large' == $instance['layout_style'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Large - 380x270', 'alc-advanced-posts' ); ?></option>
 				<option value="xlarge" <?php echo ( 'xlarge' == $instance['layout_style'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'Extra Large - 400x400', 'alc-advanced-posts' ); ?></option>
+				<option value="list-skewed" <?php echo ( 'list-skewed' == $instance['layout_style'] ) ? 'selected="selected"' : ''; ?>><?php esc_html_e( 'List - Skewed thumbnails 110x135 (Hockey)', 'alc-advanced-posts' ); ?></option>
 			</select>
 		</p>
 

@@ -19,6 +19,9 @@ if ( ! function_exists( 'alchemists_getPostViews' ) ) {
 	function alchemists_getPostViews( $postID ) {
 		$count_key = 'post_views_count';
 		$count = get_post_meta( $postID, $count_key, true );
+		if ( '' === $count ) {
+			$count = '0';
+		}
 		if ( ! is_singular( array( 'post', 'videos' ) ) ) {
 			return '<div class="meta__item meta__item--views">' . $count . '</div>';
 		}
