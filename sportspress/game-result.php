@@ -5,7 +5,7 @@
  * @author    Dan Fisher
  * @package   Alchemists Advanced Posts
  * @since     2.3.0
- * @version   2.3.0
+ * @version   2.7.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -368,11 +368,17 @@ if ( 'vertical' == $layout_style ) {
 							$previous = 0;
 							?>
 
+					<?php
+					// The timeline template is the theme's (sportspress/event/), a child theme can override it
+					$event_timeline_template = locate_template( 'sportspress/event/alc-event-timeline-' . $event_timeline_type . '.php' );
+					if ( $event_timeline_template ) :
+						?>
 					<div class="widget-game-result__section">
 
-						<?php include( ALCADVPOSTS_PLUGIN_DIR . '/sportspress/event/alc-event-timeline-' . $event_timeline_type . '.php' ); ?>
+						<?php include $event_timeline_template; ?>
 
 					</div>
+					<?php endif; ?>
 						<?php endif; ?>
 					<?php endif; ?>
 				<?php endif; ?>
